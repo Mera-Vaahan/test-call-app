@@ -1,4 +1,4 @@
-import { Server } from 'Socket.IO'
+import { Server } from 'socket.io'
 import socketHandler from '@/handlers/sockets';
 
 export default function SocketHandler(req: any, res: any){

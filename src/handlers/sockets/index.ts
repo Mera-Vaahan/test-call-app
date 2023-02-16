@@ -1,4 +1,4 @@
-import { Server, Socket } from 'Socket.IO'
+import { Server, Socket } from 'socket.io'
 import _ from 'lodash';
 import { 
     GET_PEERS_EVENT,

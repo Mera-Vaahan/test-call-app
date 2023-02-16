@@ -1,6 +1,6 @@
 import { RoomEventProps } from './inerface'
 import { REMOVE_PEER_EVENT } from '@/constants'
-import { Server } from 'Socket.IO'
+import { Server } from 'socket.io'
 
 export function onLeaveRoomEvent({
     io, socket, iceServers, roomId

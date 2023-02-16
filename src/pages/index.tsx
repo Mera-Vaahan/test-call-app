@@ -1,7 +1,7 @@
 import { ADD_PEER_EVENT, JOIN_ROOM_EVENT, LEAVE_ROOM_EVENT, PEERS_RESULT_EVENT, RTC_ANSWER_EVENT, RTC_CANDIDATE_EVENT, RTC_OFFER_EVENT } from '@/constants';
 import { AddPeerData, AnswerEventData, CandidateEventData, OfferEventData } from '@/handlers/sockets/inerface';
 import { useEffect, useRef, useState } from 'react'
-import io, { Socket } from 'Socket.IO-client'
+import io, { Socket } from 'socket.io-client'
 
 export default function Hey() {
     const [socket, setSocket] = useState<Socket>();
