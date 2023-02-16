@@ -1,0 +1,16 @@
+export const SOCKET_BASE_NAMESPACE = '/'
+export const SOCKET_UPGRADE_EVENT = 'upgrade'
+export const SOCKET_DISCONNECT_EVENT = 'disconnect'
+export const GET_PEERS_EVENT = 'get-peers'
+export const PEERS_RESULT_EVENT = 'peers-result'
+export const JOIN_ROOM_EVENT = 'join-room'
+export const LEAVE_ROOM_EVENT = 'leave-room'
+export const ADD_PEER_EVENT = 'add-peer'
+export const REMOVE_PEER_EVENT = 'remove-peer'
+export const RELAY_ICE_EVENT = 'relay-ice'
+export const ICE_CANDIDATE_EVENT = 'ice-candidate'
+export const RELAY_SDP_EVENT = 'relay-sdp'
+export const SESSION_DESCRIPTION_EVENT = 'session-description'
+export const RTC_OFFER_EVENT = 'rtc-offer';
+export const RTC_ANSWER_EVENT = 'rtc-answer';
+export const RTC_CANDIDATE_EVENT = 'rtc-candidate';
