@@ -1,5 +1,5 @@
 import { AddPeerData, RoomEventProps } from './inerface'
-import { ADD_PEER_EVENT } from '@/constants'
+import { ADD_PEER_EVENT } from '../../constants'
 
 
 export function onRoomJoinEvent({
