@@ -1,11 +1,11 @@
-import { Server } from 'socket.io'
+import { Server, Socket } from 'socket.io'
 import _ from 'lodash';
 import { 
     GET_PEERS_EVENT,
     ICE_CANDIDATE_EVENT, JOIN_ROOM_EVENT,  LEAVE_ROOM_EVENT, 
     PEERS_RESULT_EVENT, 
     RELAY_ICE_EVENT, RELAY_SDP_EVENT, RTC_ANSWER_EVENT, RTC_CANDIDATE_EVENT, RTC_OFFER_EVENT, SESSION_DESCRIPTION_EVENT, SOCKET_BASE_NAMESPACE, SOCKET_DISCONNECT_EVENT, SOCKET_UPGRADE_EVENT 
-} from '../../constants'
+} from '@/constants'
 import { onRoomJoinEvent } from './onRoomJoinEvent';
 import { onLeaveRoomEvent, postLeavingRoom } from './onLeaveRoomEvent';
 import { AnswerEventData, CandidateEventData, OfferEventData } from './inerface';

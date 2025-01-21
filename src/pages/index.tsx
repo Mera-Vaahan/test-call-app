@@ -1,7 +1,7 @@
+import { ADD_PEER_EVENT, JOIN_ROOM_EVENT, LEAVE_ROOM_EVENT, PEERS_RESULT_EVENT, RTC_ANSWER_EVENT, RTC_CANDIDATE_EVENT, RTC_OFFER_EVENT } from '@/constants';
+import { AddPeerData, AnswerEventData, CandidateEventData, OfferEventData } from '@/handlers/sockets/inerface';
 import { useEffect, useRef, useState } from 'react'
 import io, { Socket } from 'socket.io-client'
-import { ADD_PEER_EVENT, JOIN_ROOM_EVENT, LEAVE_ROOM_EVENT, PEERS_RESULT_EVENT, RTC_ANSWER_EVENT, RTC_CANDIDATE_EVENT, RTC_OFFER_EVENT } from '../constants';
-import { AddPeerData, AnswerEventData, CandidateEventData, OfferEventData } from '../handlers/sockets/inerface';
 
 export default function Hey() {
     const [socket, setSocket] = useState<Socket>();
@@ -16,6 +16,7 @@ export default function Hey() {
     useEffect(() => {
         console.log("SOCKET: ", socket);
         if(socket) {
+
             if(yourConn) {
                 yourConn.onicecandidate = function (event) { 
                     console.log("On-Ice-Candidate: ", event);
@@ -32,6 +33,10 @@ export default function Hey() {
                     } 
                 };
             }
+
+            socket.on('connect', () => {
+                console.log('connected');
+            });
             socket.on(ADD_PEER_EVENT, (data: AddPeerData) => {
                 // socket.emit(RTC_OFFER_EVENT, {
                 //     peer_id: data.peer_id,
@@ -118,11 +123,9 @@ export default function Hey() {
     }
 
     async function socketInitializer() {
+        await fetch('/api/socket');       
         // setSocket(io({transports: ['websocket']}));
-        setSocket(io('http://localhost:8000', {
-            transports: [ "websocket" ],
-            protocols: ['echo-protocol']
-        }));
+        setSocket(io());
 
         //getting local audio stream 
         navigator.mediaDevices.getUserMedia({ video: false, audio: true })
